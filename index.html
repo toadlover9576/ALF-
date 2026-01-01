@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ashley Limousin Farms - Premium grass-fed and grain-finished Limousin & Angus beef. Farm-to-table quality beef raised with care for over 20 years.">
+    <title>Ashley Limousin Farms | Premium Beef Direct from Our Farm</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2d5016;
+            --primary-dark: #1a3009;
+            --accent: #c17817;
+            --earth-light: #e8dcc4;
+            --earth-med: #8b7355;
+            --text-dark: #1a1a1a;
+            --text-light: #4a4a4a;
+            --bg-light: #faf8f5;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(29, 48, 22, 0.6), rgba(29, 48, 22, 0.6)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%232d5016" width="1200" height="800"/><path fill="%233d6020" d="M0 400 Q300 350 600 400 T1200 400 V800 H0z"/><circle fill="%23c17817" opacity="0.1" cx="200" cy="200" r="150"/><circle fill="%23c17817" opacity="0.1" cx="1000" cy="500" r="200"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #a36612;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(193, 120, 23, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            background: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        /* Beef Products Section */
+        .beef-products-section {
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--earth-med) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .product-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .price-info {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .price-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .product-details {
+            margin: 1rem 0;
+        }
+
+        .product-details h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .details-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .details-list li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .details-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 0.7;
+        }
+
+        /* Our Story Section */
+        .our-story {
+            background: var(--bg-light);
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-text h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .story-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 6rem;
+        }
+
+        /* Process Section */
+        .process {
+            background: white;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Cattle Info Section */
+        .cattle-info {
+            background: var(--primary);
+            color: white;
+        }
+
+        .cattle-info .section-header h2,
+        .cattle-info .section-header p {
+            color: white;
+        }
+
+        .cattle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cattle-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cattle-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .cattle-card ul {
+            list-style: none;
+        }
+
+        .cattle-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .cattle-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Ordering Section */
+        .ordering {
+            background: var(--bg-light);
+        }
+
+        .ordering-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .ordering-steps {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .ordering-step {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--earth-light);
+        }
+
+        .ordering-step:last-child {
+            border-bottom: none;
+        }
+
+        .ordering-step h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .ordering-step p {
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .contact-form {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            opacity: 0.8;
+        }
+
+        .quality-badges {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding: 4rem 1rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .story-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .products-grid,
+            .cattle-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Ashley Limousin Farms</div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Our Beef</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#cattle">Our Cattle</a></li>
+                <li><a href="#ordering">How to Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Premium Farm-Raised Beef</h1>
+            <p>Exceptional Limousin and Angus beef raised naturally on our family farm. Quality you can taste, standards you can trust.</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years in Business</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Grass-Fed & Grain-Finished</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">Local</div>
+                    <div class="stat-label">Farm to Your Table</div>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#products" class="btn btn-primary">Shop Our Beef</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Ashley Limousin Farms</h2>
+                <p>Superior quality beef raised with care and attention to detail</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Premium Genetics</h3>
+                    <p>We raise Limousin and Angus cattle, breeds renowned for exceptional marbling, tenderness, and rich beef flavor. Every cut delivers restaurant-quality taste.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Family Farm Values</h3>
+                    <p>Over 20 years of dedication to quality and animal welfare. We know every animal by name and care for them with respect from birth to harvest.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                    </div>
+                    <h3>Naturally Raised</h3>
+                    <p>Grass-fed with grain finishing for optimal flavor. No hormones, no unnecessary antibiotics. Just clean, wholesome beef the way nature intended.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Custom Processing</h3>
+                    <p>We work with certified USDA facilities to process each animal to your exact specifications. You choose your cuts, thickness, and packaging.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Local & Transparent</h3>
+                    <p>Visit our farm, meet our family, see where your beef comes from. We're proud of our operation and happy to show you around.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3>Great Value</h3>
+                    <p>Buy direct from the farm and skip the middleman. Get premium, farm-fresh beef at prices that make sense for your family.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beef Products Section -->
+    <section id="products" class="beef-products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Beef Products</h2>
+                <p>Choose the option that best fits your family's needs</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">Cow Food Image</div>
+                    <div class="product-info">
+                        <span class="product-badge">Most Popular</span>
+                        <h3>Quarter Beef</h3>
+                        <p>Perfect for smaller families or those trying farm-fresh beef for the first time.</p>
+                        <div class="price-info">
+                            <div class="price">$4.50<span style="font-size: 1rem;">/lb</span></div>
+                            <div class="price-label">Based on hanging weight</div>
+                        </div>
+                        <div class="product-details">
+                            <h4>What You Get:</h4>
+                            <ul class="details-list">
+                                <li>Approximately 100-125 lbs of beef</li>
+                                <li>Mix of steaks, roasts, and ground beef</li>
+                                <li>Custom cut to your preferences</li>
+                                <li>Vacuum sealed and frozen</li>
+                                <li>Fills about 4-5 cubic feet of freezer</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">Cow Food Image</</div>
+                    <div class="product-info">
+                        <span class="product-badge">Best Value</span>
+                        <h3>Half Beef</h3>
+                        <p>Ideal for families who love beef and want variety throughout the year.</p>
+                        <div class="price-info">
+                            <div class="price">$4.25<span style="font-size: 1rem;">/lb</span></div>
+                            <div class="price-label">Based on hanging weight</div>
+                        </div>
+                        <div class="product-details">
+                            <h4>What You Get:</h4>
+                            <ul class="details-list">
+                                <li>Approximately 200-250 lbs of beef</li>
+                                <li>Full variety of premium cuts</li>
+                                <li>Ribeyes, sirloins, T-bones, roasts</li>
+                                <li>Plenty of ground beef for everyday meals</li>
+                                <li>Requires 8-10 cubic feet of freezer space</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">Cow Food Image</</div>
+                    <div class="product-info">
+                        <span class="product-badge">Premium Option</span>
+                        <h3>Whole Beef</h3>
+                        <p>Maximum value for large families or those who want to stock up for the entire year.</p>
+                        <div class="price-info">
+                            <div class="price">$4.00<span style="font-size: 1rem;">/lb</span></div>
+                            <div class="price-label">Based on hanging weight</div>
+                        </div>
+                        <div class="product-details">
+                            <h4>What You Get:</h4>
+                            <ul class="details-list">
+                                <li>Approximately 400-500 lbs of beef</li>
+                                <li>Every cut from the entire animal</li>
+                                <li>Best price per pound</li>
+                                <li>Complete control over cutting instructions</li>
+                                <li>Requires 16-20 cubic feet of freezer space</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">A Product</div>
+                    <div class="product-info">
+                        <span class="product-badge">Try Before You Buy</span>
+                        <h3>Beef Bundles</h3>
+                        <p>Smaller packages perfect for trying our premium beef or supplementing your freezer.</p>
+                        <div class="price-info">
+                            <div class="price">Starting at $125</div>
+                            <div class="price-label">Various bundle options available</div>
+                        </div>
+                        <div class="product-details">
+                            <h4>Bundle Options:</h4>
+                            <ul class="details-list">
+                                <li>Steak Lover's Box (8-10 lbs)</li>
+                                <li>Ground Beef Bundle (20 lbs)</li>
+                                <li>Family Favorites Mix (15 lbs)</li>
+                                <li>Grilling Pack (12 lbs)</li>
+                                <li>Custom bundles available</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="our-story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>Family Tradition Since 2004</h3>
+                    <p>Ashley Limousin Farms began over 20 years ago with a simple vision: raise the highest quality beef using traditional farming methods and modern animal husbandry practices. What started as a small operation has grown into a trusted source for premium, farm-fresh beef.</p>
+                    <p>We specialize in Limousin and Angus cattle, two breeds celebrated for producing exceptional beef. Limousin cattle are known for their lean, heavily muscled carcasses and low fat content, while Angus cattle contribute rich marbling and unparalleled tenderness. Together, they create beef that's second to none.</p>
+                    <p>Every animal on our farm is raised with care and respect. They graze on lush pastures, receive individual attention, and are never given growth hormones. This commitment to quality and animal welfare is what makes our beef truly special.</p>
+                    <p>When you buy from Ashley Limousin Farms, you're not just getting beef—you're supporting a family business dedicated to sustainable agriculture and honest food production. We invite you to visit the farm, meet our family, and see firsthand where your food comes from.</p>
+                </div>
+                <div class="story-image">
+                    Whatever Image
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cattle Info Section -->
+    <section id="cattle" class="cattle-info">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Our Cattle</h2>
+                <p>Learn about the exceptional breeds that produce our premium beef</p>
+            </div>
+            <div class="cattle-grid">
+                <div class="cattle-card">
+                    <h3> Limousin Cattle</h3>
+                    <p>Originating from France, Limousin cattle are prized worldwide for their superior carcass quality and efficient meat production.</p>
+                    <ul>
+                        <li>Exceptional lean-to-fat ratio</li>
+                        <li>High percentage of premium cuts</li>
+                        <li>Superior muscle development</li>
+                        <li>Excellent feed efficiency</li>
+                        <li>Renowned for tenderness and flavor</li>
+                        <li>Lower cholesterol content</li>
+                    </ul>
+                </div>
+
+                <div class="cattle-card">
+                    <h3>🐄 Angus Cattle</h3>
+                    <p>Black Angus is America's favorite beef breed, celebrated for consistent marbling and rich, beefy flavor that makes every cut special.</p>
+                    <ul>
+                        <li>Outstanding marbling throughout</li>
+                        <li>Tender, juicy, and flavorful</li>
+                        <li>Excellent maternal traits</li>
+                        <li>Hardy and adaptable</li>
+                        <li>Consistent quality and taste</li>
+                        <li>Premium ribeye development</li>
+                    </ul>
+                </div>
+
+                <div class="cattle-card">
+                    <h3> Our Raising Practices</h3>
+                    <p>We combine the best of both worlds: natural grazing with careful finishing to produce beef that's healthy, flavorful, and tender.</p>
+                    <ul>
+                        <li>100% grass-fed on quality pastures</li>
+                        <li>Grain-finished for optimal flavor</li>
+                        <li>No growth hormones ever</li>
+                        <li>Minimal antibiotic use (health only)</li>
+                        <li>Low-stress handling methods</li>
+                        <li>Individual animal monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>From Our Farm to Your Table</h2>
+                <p>Every step ensures the highest quality and food safety standards</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Raised with Care</h3>
+                    <p>Our cattle spend their entire lives on our farm, grazing naturally and receiving daily attention from our family.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>USDA Processing</h3>
+                    <p>We partner with certified USDA facilities that share our commitment to quality and humane handling practices.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Custom Cutting</h3>
+                    <p>Your beef is cut exactly to your specifications—steak thickness, roast sizes, ground beef packages, and more.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Professional Packaging</h3>
+                    <p>Every cut is vacuum sealed and clearly labeled with cut type and weight for easy identification and maximum freshness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ordering Section -->
+    <section id="ordering" class="ordering">
+        <div class="container">
+            <div class="section-header">
+                <h2>How to Order</h2>
+                <p>Getting farm-fresh beef is easy. Here's how it works:</p>
+            </div>
+            <div class="ordering-content">
+                <div class="ordering-steps">
+                    <div class="ordering-step">
+                        <h3>Step 1: Contact Us</h3>
+                        <p>Call, email, or fill out our contact form to reserve your beef. We'll answer all your questions and confirm availability. Current wait times vary by season.</p>
+                    </div>
+                    <div class="ordering-step">
+                        <h3>Step 2: Choose Your Cuts</h3>
+                        <p>We'll send you a detailed cut sheet where you specify exactly how you want your beef processed—steak thickness, roast sizes, how much ground beef, and any special requests.</p>
+                    </div>
+                    <div class="ordering-step">
+                        <h3>Step 3: Deposit & Processing</h3>
+                        <p>A deposit (typically 25%) reserves your beef. Final payment is based on hanging weight and is due at pickup. Processing fees are separate and paid directly to the processor.</p>
+                    </div>
+                    <div class="ordering-step">
+                        <h3>Step 4: Pickup or Delivery</h3>
+                        <p>Your beef will be ready for pickup at our farm or the processing facility (typically 2-3 weeks after processing). Local delivery may be available—ask us for details.</p>
+                    </div>
+                    <div class="ordering-step">
+                        <h3>Understanding Hanging Weight</h3>
+                        <p>Hanging weight is the weight of the carcass after initial processing. You'll receive approximately 60-65% of the hanging weight as final packaged beef. For example, a 400 lb hanging weight yields about 240-260 lbs of beef for your freezer.</p>
+                    </div>
+                    <div class="ordering-step">
+                        <h3>Typical Costs Breakdown</h3>
+                        <p><strong>Example for Half Beef:</strong> 225 lbs hanging weight × $4.25/lb = $956.25 to us, plus approximately $125-150 processing fee to the processor = Total around $1,081-1,106 for approximately 145 lbs of beef (about $7.50/lb final cost for premium farm beef).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Ready to order or have questions? We'd love to hear from you.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            <a href="tel:555-0123">(555) 123-4567</a><br>
+                            <small>Call or text anytime</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:info@ashleylimousinfarms.com">info@ashleylimousinfarms.com</a><br>
+                            <small>We respond within 24 hours</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Visit Us</strong><br>
+                            123 Farm Road<br>
+                            Rural County, State 12345<br>
+                            <small>Call ahead to schedule a farm tour</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Farm Hours</strong><br>
+                            By appointment only<br>
+                            <small>We're happy to show you around!</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">I'm Interested In *</label>
+                            <select id="interest" name="interest" required>
+                                <option value="">Select an option</option>
+                                <option value="quarter">Quarter Beef</option>
+                                <option value="half">Half Beef</option>
+                                <option value="whole">Whole Beef</option>
+                                <option value="bundle">Beef Bundle</option>
+                                <option value="info">General Information</option>
+                                <option value="tour">Farm Tour</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your needs, ask questions, or let us know the best time to reach you..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Ashley Limousin Farms</h4>
+                <p>Premium Limousin and Angus beef raised naturally on our family farm since 2004.</p>
+                <div class="quality-badges">
+                    <div class="badge">USDA Inspected</div>
+                    <div class="badge">Family Owned</div>
+                    <div class="badge">No Hormones</div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Our Beef</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#cattle">Our Cattle</a></li>
+                    <li><a href="#ordering">How to Order</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#products">Quarter Beef</a></li>
+                    <li><a href="#products">Half Beef</a></li>
+                    <li><a href="#products">Whole Beef</a></li>
+                    <li><a href="#products">Beef Bundles</a></li>
+                    <li><a href="#contact">Custom Orders</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <p><strong>Phone:</strong> whatever number we're putting</p>
+                <p><strong>Email:</strong> info@ashleylimousinfarms.com or some other actuual doamin email</p>
+                <p><strong>Address:</strong> 123 Farm Road<br>Rural County, State 12345</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ashley Limousin Farms. All rights reserved. | Premium Beef Since 2004</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you within 24 hours.');
+            event.target.reset();
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
